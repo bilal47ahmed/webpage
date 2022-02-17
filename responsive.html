@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Responsive</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+.main{
+    height: 100vh;
+    width: 100%;
+    background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.3)), url(img/food2.jpg);
+    background-position: center;
+    background-size: cover;
+    
+    position: relative;
+}
+.nav-bar{
+           display: flex;
+           padding: 40px 120px;
+           text-transform: uppercase;
+        }
+        .logo{
+            width: 135px;
+            color: greenyellow;
+            font-weight: bold;
+        }
+    
+        .navlinks{
+              flex: 1;
+             }
+        .navlinks ul{
+            margin-left:50px;
+            display: inline;
+            }
+        .navlinks ul li{
+            list-style: none;
+            display: inline-block;
+            padding: 8px 25px;
+        }
+        .navlinks ul a{
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        .navlinks ul li::after{
+            content: '';
+            width: 0;
+            height: 2px;
+            background: yellow;
+            display: block;
+            margin: auto;
+            transition: 0.5s;
+
+        }
+        .navlinks ul li:hover::after{
+           width: 100%;
+        }
+        
+        .btn{
+            padding: 10px 20px;
+            font-weight: bold;
+            border: 0;
+            background:yellow;
+            cursor: pointer;
+        }
+        .nav-bar .btn{
+            float: right;
+        }
+        .bannertitle{
+            margin: 80px 130px;
+            color: white;
+        }
+        .bannertitle h1{
+            font-size: 64px;
+            margin-bottom: 30px;
+        }
+         .bannertitle h1 span{
+            color: palegreen;
+        } 
+        .vertical_bar{
+            height: 100%;
+            background: #000;
+            top: 0;
+            left: 0;
+            position: absolute;
+
+        }
+        .search_icon{
+            height: 60%;
+            width: 80px;
+        }
+        .search_icon .fa{
+            margin: 45px 23px;
+            display: block;
+            color: #fff;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .social_icon{
+            height: 35%;
+            width: 80px;
+            background: yellow;
+            text-align: center;
+            padding-top: 27%;
+            bottom: 0;
+            position: absolute;
+        }
+        .social_icon .fa{
+            margin: 15px 23px;
+            display: block;
+            padding: 8px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .notification{
+            display: flex;
+            width: 400px;
+            right: 0;
+            bottom: 0;
+            position: absolute;
+            background: yellow;
+
+            align-items: center;
+        
+        }
+        .contents{
+            flex-basis: 50%;
+            padding: 10px;
+        }
+        .notification-image{
+            flex-basis: 50%;
+
+      }
+      .notification-image img{
+          width: 100%;
+          }
+          .contents a{
+              text-decoration: none;
+              color: #000;
+              font-size: 13px;
+              margin: 0 10px;
+              font-weight: bold;
+          }
+          .contents p{
+              text-align: right;
+              margin-top: 10px;
+          }
+          .nav-bar .fa{
+              display: none;
+          }
+          @media(max-width: 700px){
+              .vertical_bar{
+                  display:none;
+              }
+              .bannertitle{
+                  margin: 80px 40px;
+
+              }
+              .bannertitle h1{
+                  font-size: 50px;
+              }
+              .notification{
+                  width: 100%;
+              }
+              .nav-bar{
+                  padding: 10px 30px;
+              }
+              .fa-bars{
+                  position: absolute;
+                  right: 20px;
+                  top: 10px;
+              }
+             .nav-bar .fa-bars{
+                 display: block;
+                 color: #fff;
+                 margin: 10px 25px;
+                 font-size: 22px;
+                 cursor: pointer;
+             }
+             .navlinks{
+                 height: 100vh;
+                 width: 200px;
+                 background: black;
+                 top: 0;
+                 right: -200px;
+                 position: absolute;
+                 text-align: left;
+                 z-index: 2;
+                 transition: 0.5s;
+             }
+             .navlinks ul a{
+                 display: block;
+             }
+             .navlinks .btn{
+                 float: none;
+                 margin-left: 25px;
+                 margin-top: 10px;
+             }
+             .nav-bar .fa-close{
+                display: block;
+                 color: #fff;
+                 margin: 10px 25px;
+                 font-size: 22px;
+                 cursor: pointer;
+             }
+
+
+          }
+        
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="nav-bar">
+            <div class="logo">
+                <h1>Burger Lub</h1>
+            </div>
+            <div class="navlinks" id="nav_links">
+                <i class="fa fa-close" onclick="closeMenu()"></i>
+             <ul>
+                 <a href="#"><li>HOME</li></a>
+                 <a href="#"><li>About</li></a>
+                 <a href="#"><li>Content</li></a>
+                 <a href="#"><li>Menu</li></a>
+             </ul>
+             <button type="button" class="btn">SIGN UP</button>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </div>
+        <div class="bannertitle">
+            <h1>Food <span>Doesn't have<br>a religion.</span> It is a religion</h1>
+            <button type="button" class="btn">EXPLORE</button>
+        </div>
+        <div class="vertical_bar">
+            <div class="search_icon">
+                <i class="fa fa-th-list"></i>
+                <i class="fa fa-search"></i>
+            </div>
+            <div class="social_icon">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-pinterest"></i>
+            </div>
+        </div>
+<div class="notification">
+    <div class="contents">
+        <small>Suscribe Easy Tutortials YouTube Channel And Never Miss Any New Videos</small>
+        <p><a href="">PREV</a><a href="">NEXT</a></p>
+    </div>
+    <div class="notification-image">
+        <img src="img/food.webp">
+    </div>
+</div>
+    </div>
+    <script>
+           var show = document.getElementById("nav_links");
+           function showMenu(){
+               show.style.right = "0";
+           }
+           function closeMenu(){
+               show.style.right = "-200px";
+           }
+    </script>
+    
+</body>
+</html>
